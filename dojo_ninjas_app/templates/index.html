@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Good Dojo</title>
+
+</head>
+
+<body>
+
+    <fieldset style="display: inline-block; width:400px;">
+        <form>
+
+            <h1>Add a Dojo</h1>
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <br>
+            <br>
+            <label for="city">City</label>
+            <input type="text" id="city" name="city">
+            <br>
+            <br>
+            <label for="state">State</label>
+            <input type="text" id="state" name="state">
+            <br>
+            <br>
+            <input type="Submit" value="Add">
+
+    </fieldset>
+    </form>
+
+
+    <fieldset style="display: inline-block; width:400px;">
+        <form action="/process/student" method="post">
+            <h1>Add a Ninja</h1>
+            {% csrf_token %}
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name">
+            <br>
+            <br>
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name">
+            <br>
+            <br>
+            <label for="dojo">Dojo</label>
+            <select name="dojo_id" id="dojo">
+                {% for dojo in all_dojos %}
+
+                <option value="{{dojo.id}}">{{dojo.name}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <br>
+            <input type="Submit" value="Add">
+        </form>
+    </fieldset>
+
+    <tbody>
+        {% for students in all_users %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.dojo}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+    {% for dojo in all_dojos %}
+    <p>Ninjas at the {{dojo.name}} Location {{dojo.students.all | length}} students currently go here</p>
+    <ul>
+        {% for student in dojo.students.all %}
+        <li>
+            {{student.first_name}} {{student.last_name}}
+        </li>
+        {% endfor %}
+
+    </ul>
+
+
+
+    {% endfor %}
+
+</body>
+
+</html>

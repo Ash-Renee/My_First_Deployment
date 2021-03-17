@@ -1,0 +1,53 @@
+Dojo.objects.create(name = "Cobra Kai", city = "Dublin", state = "Ireland")
+Dojo.objects.create(name = "Destiny", city = "Nerds", state = "Ireland")
+Dojo.objects.create(name = "Satisfactory", city = "Massage", state = "Ireland")
+
+Dojo.objects.all().delete()
+
+Ninjas:
+Ashley
+Sarah
+Brynn
+
+Greg
+Paige
+Salem
+
+Moxie
+Athena
+Asher
+
+Dojo.objects.get(id=4)
+school = Dojo.objects.get(id=4)
+
+Ninja.objects.create(dojo = school, first_name = "Ashley", last_name = "D'Allessandro")
+Ninja.objects.create(dojo = school, first_name = "Sarah", last_name = "Sarah")
+Ninja.objects.create(dojo = school, first_name = "Brynn", last_name = "Tired")
+
+Dojo.objects.get(id=5)
+school = Dojo.objects.get(id=5)
+
+Ninja.objects.create(dojo = school, first_name = "Greg", last_name = "Egg")
+Ninja.objects.create(dojo = school, first_name = "Paige", last_name = "Pupper")
+Ninja.objects.create(dojo = school, first_name = "Salem", last_name = "Tired")
+
+Dojo.objects.get(id=6)
+school = Dojo.objects.get(id=6)
+
+Ninja.objects.create(dojo = school, first_name = "Moxie", last_name = "Tired")
+Ninja.objects.create(dojo = school, first_name = "Athena", last_name = "Egg")
+Ninja.objects.create(dojo = school, first_name = "Asher", last_name = "Tired")
+
+
+cobra = Dojo.objects.get(id=4)
+cobra.students.all()
+
+destiny = Dojo.objects.get(id=5)
+destiny.students.all()
+
+satisfactory = Dojo.objects.get(id=6)
+satisfactory.students.all
+
+Dojo.objects.create(name = "Bumble", city = "Tacoma", state = "Ireland", desc = "bacon")
+
+users = Ninja.objects.all()
