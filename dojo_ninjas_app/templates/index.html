@@ -12,7 +12,7 @@
 <body>
 
     <fieldset style="display: inline-block; width:400px;">
-        <form>
+        <form action="/create_dojo" method="post">
 
             <h1>Add a Dojo</h1>
             {% csrf_token %}
@@ -29,9 +29,9 @@
             <br>
             <br>
             <input type="Submit" value="Add">
-
+        </form>
     </fieldset>
-    </form>
+
 
 
     <fieldset style="display: inline-block; width:400px;">

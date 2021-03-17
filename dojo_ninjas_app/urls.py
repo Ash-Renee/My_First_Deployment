@@ -4,5 +4,5 @@ urlpatterns = [
 
     path('', views.index),
     path("process/student", views.people),
-    # path('create_dojo', views.building,)
+    path('create_dojo', views.building)
 ]

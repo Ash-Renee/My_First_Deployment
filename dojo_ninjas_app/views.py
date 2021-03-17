@@ -18,3 +18,11 @@ def people(request):
     print(request.POST)
     # print(f"NEW USER ID: {students.id}")
     return redirect("/")
+
+def building(request):
+    Dojo.objects.create(
+        name = request.POST['name'],
+        city = request.POST['city'],
+        state = request.POST['state']
+    )
+    return redirect("/")
